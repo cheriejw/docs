@@ -3,19 +3,15 @@
 **Data Layer**
 While working on DataSets, code behind page couldn't find my new DataSets I had just made. The solution to this was removing the `Ds/DataSetNameDs.cs` file that was under the `DataSetNameDs` (file?) the .cs file had something like:
 ```c
-namespace Ensenta.Admin.Db.Ds
+namespace Admin.Db.Ds
 {
 }
 
-namespace Ensenta.Admin.Db.Ds {
-    
-    
+namespace Admin.Db.Ds {
     public partial class RemitFieldSummaryDs {
     }
 }
-namespace Ensenta.Admin.Db.Ds {
-    
-    
+namespace Admin.Db.Ds {
     public partial class RemitFieldSummaryDs {
     }
 }
