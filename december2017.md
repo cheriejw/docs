@@ -8,11 +8,11 @@ namespace Admin.Db.Ds
 }
 
 namespace Admin.Db.Ds {
-    public partial class RemitFieldSummaryDs {
+    public partial class DataSetNameDs {
     }
 }
 namespace Admin.Db.Ds {
-    public partial class RemitFieldSummaryDs {
+    public partial class DataSetNameDs {
     }
 }
 ```
