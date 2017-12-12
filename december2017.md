@@ -2,6 +2,8 @@
 ##### --- **12/11/2017** ---
 [ASP.NET COURSES](https://www.asp.net/freecourses)
 
+[Async](https://docs.microsoft.com/en-us/dotnet/csharp/async)
+
 [**Page Life Cycle**](https://msdn.microsoft.com/en-us/library/ms178472.aspx#login_control_events)
 There is one cs file in the entire Page folder, named 'BasePage.cs' that inherits from `System.Web.UI.Page`. where the protected virtual void Page_Load method is with no references in my ascx file. The abstract ascx file that all the other pages inherit from inherits from `System.Web.UI.Control`.
 
