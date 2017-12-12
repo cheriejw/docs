@@ -1,5 +1,9 @@
 ## .NET
 ##### --- **12/11/2017** ---
+SqlDataAdapter.Fill(ds) make stored proceedure call.
+
+>the as operator performs only reference conversions, nullable conversions, and boxing conversions.
+ Boxing is the act of treating a value type as reference type (which in practice, involves copying the contents of that value type (from stack) to the heap and returning a reference to that object).
 [ASP.NET COURSES](https://www.asp.net/freecourses)
 
 [Async](https://docs.microsoft.com/en-us/dotnet/csharp/async)
