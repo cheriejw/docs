@@ -5,6 +5,10 @@ aspx can have many ascx, like components.
 
 `<%@ Register TagPrefix="uc1" TagName="NoteEditRights" Src="NoteEditRights.ascx" %>`
 At the top of ascx. Using `<uc1:NoteEditRights ID="ucNoteEditRights" runat="server" EnableViewState="False" Singular="Transaction" Visible="false"></uc1:NoteEditRights>` in code like a component. Component created in registered src file: `NoteEditRights.ascx`.
+
+Transalate what the following means architecturally:
+``
+
 ##### --- **12/11/2017** ---
 SqlDataAdapter.Fill(ds) make stored proceedure call.
 
