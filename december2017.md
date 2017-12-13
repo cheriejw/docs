@@ -3,11 +3,22 @@
 [**Custom Components**](http://www.drdobbs.com/custom-components-in-aspnet-using-c/184401682)
 aspx can have many ascx, like components.
 
-`<%@ Register TagPrefix="uc1" TagName="NoteEditRights" Src="NoteEditRights.ascx" %>`
-At the top of ascx. Using `<uc1:NoteEditRights ID="ucNoteEditRights" runat="server" EnableViewState="False" Singular="Transaction" Visible="false"></uc1:NoteEditRights>` in code like a component. Component created in registered src file: `NoteEditRights.ascx`.
+`<%@ Register TagPrefix="uc1" TagName="Note" Src="Note.ascx" %>`
+At the top of ascx. Using `<uc1:Note ID="ucNote" runat="server" EnableViewState="False" Singular="Transaction" Visible="false"></uc1:Note>` in code like a component. Component created in registered src file: `Note.ascx`.
 
 Transalate what the following means architecturally:
-``
+`view/send alert = ECA.AlertLogControl (renders dgridand links, also async rendered) -> ECA.ViewAlert upon calling showAlert() -> calling ECS.Alert.EmailPurchaseRecipt() to "validate"
+(which also sets the reciept) and sets typeof(PurchaseRecipt) which is where alertevent 28 came from, 2 is in EmailMultiCheckRecipt. -> ECS.Alert.EmailReciept with that alertevent 28, after filling recipt object calls ECA. which loads recipt and then on "//Generate Alert" checks recipttype(can only be multicheck or purchase) -> Uses ECAlert Alert obj with castings from guid to it and other object things... (havent explored much yet) -> back to ECS.Alert.EmailReciept -> back to ECA alertguid in session state if it can and ECA.ViewAlert will take guid to get reciept. : object alertEmailGuid = Session[emailReceiptGuid.ToString()];
+hidEmailGuid.Value = emailReceiptGuid.ToString();
+AlertEmail alertEmail = alertEmailGuid as AlertEmail;
+if (alertEmail != null)
+{
+ShowEmailAlert(alertEmail.EmailMessage); //in same class
+btnSend.Text = "Send";
+}
+`
+**#FinTech**
+> A remittance is a payment that gets sent somewhere else. If you get a bill in the mail, you will usually have at least a week to send your remittance. To "remit" is to send money or make a payment and what you send is called remittance.
 
 ##### --- **12/11/2017** ---
 SqlDataAdapter.Fill(ds) make stored proceedure call.
