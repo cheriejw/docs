@@ -1,4 +1,13 @@
 ## .NET
+##### --- **12/13/2017** ---
+Page_Load is called every action. Every postback?
+Show is only called once, at beginning of page.
+
+Set `EnableViewState` Property to true and it adjusted width to parent view.
+Gets or sets a value indicating whether the server control persists its view state, and the view state of any child controls it contains, to the requesting client.(Inherited from Control.)
+
+**Build Files**
+Inside the project file / bin is where the built dll should be. The dll is what is served by IIS.
 ##### --- **12/12/2017** ---
 [**Custom Components**](http://www.drdobbs.com/custom-components-in-aspnet-using-c/184401682)
 aspx can have many ascx, like components.
