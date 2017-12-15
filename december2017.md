@@ -1,4 +1,11 @@
 ## .NET
+
+http://www.c-sharpcorner.com/UploadFile/d6fefe/delegate-anonymous-function-and-lambda-expression-in-C-Sharp/
+
+http://www.dotnetcurry.com/csharp/1193/csharp-constructor-types-interview-question
+
+Initialize/Instanciate with `new Thing() {ThingsProp = x, ThingsProp2 = y};`
+
 ##### --- **12/13/2017** ---
 Page_Load is called every action. Every postback?
 Show is only called once, at beginning of page.
