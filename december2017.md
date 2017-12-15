@@ -1,4 +1,28 @@
 ## .NET
+##### --- **12/15/2017** ---
+**Injecting Javascript**
+Took me forever to get the right script. I'm noob.
+```java
+public void Refresh_Click(object sender, EventArgs e)
+{
+    ScriptManager.RegisterClientScriptBlock(Page, GetType(), "script", "document.getElementById('" + lnkRefresh.ClientID + "').style.visibility = 'hidden'; window.setTimeout(function() { document.getElementById('" + lnkRefresh.ClientID + "').style.visibility = '' },2000);", true);
+    LoadAndBindRdeLogFromViewState();
+    uPanelRdeLog.Update();
+}
+```
+
+**Used a Property (Tried)**
+``` java
+private System.Timers.Timer RefreshTimer
+{
+    get
+    {
+        System.Timers.Timer refreshTimer = new System.Timers.Timer(5000) { Enabled = false, AutoReset = false };
+        refreshTimer.Elapsed += (Object src, System.Timers.ElapsedEventArgs eea) => { lnkRefresh.Visible = true; uPanelAlertLog.Update(); };
+        return refreshTimer;
+    }
+}
+```
 
 http://www.c-sharpcorner.com/UploadFile/d6fefe/delegate-anonymous-function-and-lambda-expression-in-C-Sharp/
 
