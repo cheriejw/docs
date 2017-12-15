@@ -1,6 +1,5 @@
 ## .NET
 https://www.hanselman.com/blog/WhatNETDevelopersOughtToKnowToStartIn2017.aspx
-
 http://www.hanselman.com/blog/WhatGreatNETDevelopersOughtToKnowMoreNETInterviewQuestions.aspx
 
 http://dotnetpattern.com/threading-interview-questions-series-part-1
@@ -13,6 +12,9 @@ http://dapper-tutorial.net/result-multi-mapping
 https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer
 
 ##### --- **12/15/2017** ---
+**DataSet**
+Goes in order it is put in. Column names don't really matter, which is why the column was wrong last time.
+
 **NULLABLE TYPE?**
 https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/nullable-types/how-to-identify-a-nullable-type
 
