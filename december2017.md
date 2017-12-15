@@ -1,5 +1,29 @@
 ## .NET
+https://www.hanselman.com/blog/WhatNETDevelopersOughtToKnowToStartIn2017.aspx
+
+http://www.hanselman.com/blog/WhatGreatNETDevelopersOughtToKnowMoreNETInterviewQuestions.aspx
+
+http://dotnetpattern.com/threading-interview-questions-series-part-1
+
+https://softwareengineering.stackexchange.com/questions/95212/when-to-favor-asp-net-webforms-over-mvc
+
+http://dapper-tutorial.net/result-multi-mapping
+
+**Default constructor or oject initializer!**
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer
+
 ##### --- **12/15/2017** ---
+**NULLABLE TYPE?**
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/nullable-types/how-to-identify-a-nullable-type
+
+**Async**
+https://forums.asp.net/t/1230943.aspx?The+Update+method+can+only+be+called+on+UpdatePanel+with+ID+UpdatePanel1+before+Render
+>I can see clearly the problem in your code. You are using async operation (in this case BeginGetResponse) which will not block main thread while the operation is in progress. This means Page lifecycle will continue to progress, it will even render the results and quit BEFORE you will get the response from remote web server, and it's logical that calling UpdatePanel1.Update at this point will throw an exception.
+The approach you chose to not to block (freeze) UI while calling remote server will not work anyway, because it only makes sense to use this approach in ASP.NET if you have several - 2 or more simultaneous time-expensive operations to perform(let's say two or more calls to remote server). You anyway will have to wait untill call completes and freeze the main thread untill that.
+What will happen if main thread renders the response and calls it to browser before completeon of async operation? Nothing - rendered page can not be re-rendered or undone - it will already be sent over TCP network to internet and will exist in form of thousand of TCP packets.
+I think to achieve what you want to do - you should implement the following model: 1) first of all you will have to make more than one AJAX call to the server - first to launch BeginGetResponse of WebRequest object, and second request to retrieve the results. 2) second request may be done on every time interval (reoccuring) - this is known as polling model. 3) results of async operation can be stored in some persistense medium - for example in database, or XML file.
+I would recommend to look at my blog post about the exactly what you want to achieve, you can see it here : [Displaying Progress Bar for Long-Running Processes on Server using ASP.NET AJAX](http://blog.devarchive.net/2008/01/displaying-progress-bar-for-long.html)
+
 **Injecting Javascript**
 Took me forever to get the right script. I'm noob.
 ```java
@@ -24,9 +48,9 @@ private System.Timers.Timer RefreshTimer
 }
 ```
 
-http://www.c-sharpcorner.com/UploadFile/d6fefe/delegate-anonymous-function-and-lambda-expression-in-C-Sharp/
+[delegate, anons, lambdas](http://www.c-sharpcorner.com/UploadFile/d6fefe/delegate-anonymous-function-and-lambda-expression-in-C-Sharp/)
 
-http://www.dotnetcurry.com/csharp/1193/csharp-constructor-types-interview-question
+[constructor types](http://www.dotnetcurry.com/csharp/1193/csharp-constructor-types-interview-question)
 
 Initialize/Instanciate with `new Thing() {ThingsProp = x, ThingsProp2 = y};`
 
