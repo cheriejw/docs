@@ -11,6 +11,23 @@ http://dapper-tutorial.net/result-multi-mapping
 **Default constructor or oject initializer!**
 https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer
 
+##### --- **12/21/2017** ---
+>The virtual keyword is used to modify a method, property, indexer, or event declaration and allow for it to be overridden in a derived class. 
+
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/out
+https://stackoverflow.com/questions/5995317/how-to-convert-c-sharp-nullable-int-to-int
+`v2 = v1 ?? default(int);`
+https://stackoverflow.com/questions/585859/what-is-the-difference-between-protected-and-protected-internal
+- protected:
+The type or member can be accessed only by code in the same class or struct, or in a class that is derived from that class.
+
+- internal:
+The type or member can be accessed by any code in the same assembly, but not from another assembly.
+
+sqlDa.Fill(ds, ds.AlertTemplatePreview.TableName); only worked when I named the Ds table a different name on the designer. I.e. when i named it AlertTemplatePreviewDs it didn't even work wiht ds, ds.AlertTemplatePreviewDs... odd.
+
+https://stackoverflow.com/questions/585859/what-is-the-difference-between-protected-and-protected-internal
+
 ##### --- **12/15/2017** ---
 **DataSet**
 Goes in order it is put in. Column names don't really matter, which is why the column was wrong last time.
