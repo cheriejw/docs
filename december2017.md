@@ -8,11 +8,17 @@ https://softwareengineering.stackexchange.com/questions/95212/when-to-favor-asp-
 
 http://dapper-tutorial.net/result-multi-mapping
 
+## SQL
+[Aggregate vs Analytic Functions](https://my.vertica.com/docs/7.2.x/HTML/index.htm#Authoring/AnalyzingData/SQLAnalytics/AnalyticFunctionsVersusAggregateFunctions.htm)
+[Vector vs Scalar](http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.infocenter.dc32300.1570/html/sqlug/sqlug639.htm)
+>Aggregate functions can be applied to all the rows in a table, in which case they produce a single value, a scalar aggregate. They can also be applied to all the rows that have the same value in a specified column or expression (using the group by and, optionally, the having clause), in which case, they produce a value for each group, a vector aggregate. The results of the aggregate functions are shown as new columns.
 
 **Default constructor or oject initializer!**
 https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer
 
 ##### --- **12/29/2017** ---
+>The only difference is that .HTM is used as an alternate to .HTML for some operating systems and servers that do not accept four-letter extensions.
+
 [Session VS ViewState](https://stackoverflow.com/questions/2883149/viewstate-vs-session-maintaining-object-through-page-lifecycle)
 [Dynamically created controls and postback. (Rendering something new via event handler.)](https://stackoverflow.com/questions/4216329/asp-net-dynamically-created-controls-and-postback)
 
