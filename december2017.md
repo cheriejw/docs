@@ -8,8 +8,13 @@ https://softwareengineering.stackexchange.com/questions/95212/when-to-favor-asp-
 
 http://dapper-tutorial.net/result-multi-mapping
 
+
 **Default constructor or oject initializer!**
 https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer
+
+##### --- **12/29/2017** ---
+[Session VS ViewState](https://stackoverflow.com/questions/2883149/viewstate-vs-session-maintaining-object-through-page-lifecycle)
+[Dynamically created controls and postback. (Rendering something new via event handler.)](https://stackoverflow.com/questions/4216329/asp-net-dynamically-created-controls-and-postback)
 
 ##### --- **12/21/2017** ---
 >The virtual keyword is used to modify a method, property, indexer, or event declaration and allow for it to be overridden in a derived class. 
