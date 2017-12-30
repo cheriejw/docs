@@ -11,6 +11,7 @@ http://dapper-tutorial.net/result-multi-mapping
 ## SQL
 [Aggregate vs Analytic Functions](https://my.vertica.com/docs/7.2.x/HTML/index.htm#Authoring/AnalyzingData/SQLAnalytics/AnalyticFunctionsVersusAggregateFunctions.htm)
 [Vector vs Scalar](http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.infocenter.dc32300.1570/html/sqlug/sqlug639.htm)
+[RANK() OVER](https://www.techonthenet.com/oracle/functions/rank.php)
 >Aggregate functions can be applied to all the rows in a table, in which case they produce a single value, a scalar aggregate. They can also be applied to all the rows that have the same value in a specified column or expression (using the group by and, optionally, the having clause), in which case, they produce a value for each group, a vector aggregate. The results of the aggregate functions are shown as new columns.
 
 **Default constructor or oject initializer!**
