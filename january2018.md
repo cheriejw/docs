@@ -1,8 +1,17 @@
 
-## .NET
-
+## C#
+[C# Colon](https://stackoverflow.com/questions/17034475/in-c-sharp-what-category-does-the-colon-fall-into-and-what-does-it-really)
+```CS
+Console.WriteLine(value: "Foo"); 
+//prints Foo
+Console.WriteLine(vale: "Foo");
+//Error(s): (15:31) The best overload for 'WriteLine' does not have a parameter named 'vale'
+```
 
 ## SQL
+
+##### --- **1/8/2018** ---
+> Dates are inefficient, going by topic now.
 
 ##### --- **1/5/2018** ---
 > The moral of the story is ASMX is simple and because it is simple, it isn’t very powerful.  Take the time to learn about WCF because this is the future of the .Net platform, thus it will be time wisely spent.
