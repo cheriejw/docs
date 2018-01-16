@@ -1,5 +1,25 @@
+## **Any programming language of course serves two goals:**
+- Provide instructions to the computer.
+- Leave a record of the intentions of the programmer.
+---
+
+## Java
+[Switch with String](https://stackoverflow.com/questions/338206/why-cant-i-switch-on-a-string?rq=1)
 
 ## C#
+[Switch Statement Fallthrough in C# Language Design](https://stackoverflow.com/questions/174155/switch-statement-fallthrough-in-c)
+>In summary therefore:
+C# no longer relates to unoptimised compiler output as directly as C code did 40 years ago (nor does C these days), which makes one of the inspirations of fall-through irrelevant.
+C# remains compatible with C in not just having implicit break, for easier learning of the language by those familiar with similar languages, and easier porting.
+C# removes a possible source of bugs or misunderstood code that has been well-documented as causing problems for the last four decades.
+C# makes existing best-practice with C (document fall through) enforceable by the compiler.
+C# makes the unusual case the one with more explicit code, the usual case the one with the code one just writes automatically.
+C# uses the same goto-based approach for hitting the same block from different case labels as is used in C. It just generalises it to some other cases.
+C# makes that goto-based approach more convenient, and clearer, than it is in C, by allowing  case statements to act as labels.
+All in all, a pretty reasonable design decision
+
+
+
 [C# Colon](https://stackoverflow.com/questions/17034475/in-c-sharp-what-category-does-the-colon-fall-into-and-what-does-it-really)
 ```CS
 Console.WriteLine(value: "Foo"); 
