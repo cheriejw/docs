@@ -7,6 +7,29 @@
 [Switch with String](https://stackoverflow.com/questions/338206/why-cant-i-switch-on-a-string?rq=1)
 
 ## C#
+[Elegant Solution](https://www.hackerrank.com/challenges/staircase/problem)
+```csharp
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+class Solution {
+
+    static void staircase(int n) {
+        string pound = "";
+        for (int i = 0; i < n; i++){
+            pound += "#";
+            Console.Write($"{{0,{n}}}\n", pound);
+        }
+    }
+
+    static void Main(String[] args) {
+        int n = Convert.ToInt32(Console.ReadLine());
+        staircase(n);
+    }
+}
+```
+
 [Putting 'using' inside or outside of namespace](https://stackoverflow.com/questions/125319/should-using-statements-be-inside-or-outside-the-namespace)
 Basically If you put the using outside of the nestest namespace, the code in that nested namespace file will look and use the using from the higher namespace. If you put it inside of the namespace, it will use that first. Searches its own namespace (inside of {}), then searches the namespace up (inside {}). When you put using outside of namespace and it searches your namespace it won't be there, it will be showed last on the higher level namespace.
 
