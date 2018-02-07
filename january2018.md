@@ -7,7 +7,17 @@
 [Switch with String](https://stackoverflow.com/questions/338206/why-cant-i-switch-on-a-string?rq=1)
 
 ## C#
-[Elegant Solution](https://www.hackerrank.com/challenges/staircase/problem)
+[Casting with as](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/how-to-safely-cast-by-using-as-and-is-operators)
+```csharp
+protected void lstDistributionType_SelectedIndexChanged(object sender, EventArgs e)
+{
+    DropDownList list = (DropDownList)sender;
+    TableCell cell = list.Parent as TableCell;
+    DataGridItem item = cell.Parent as DataGridItem;
+}
+```
+
+[Utilized Solution](https://www.hackerrank.com/challenges/staircase/problem)
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -59,6 +69,33 @@ Console.WriteLine(vale: "Foo");
 
 [Datagrid, ItemDataBound, access selected.](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datagrid.itemdatabound(v=vs.110).aspx)
 ## SQL
+
+##### Delete Update Cascade
+```SQL
+ALTER TABLE [dbo].[RemitCategoryAssoc]  WITH CHECK ADD  CONSTRAINT [FK_RemitCategoryAssoc_RemitCategory] FOREIGN KEY([RemitCategoryId])
+REFERENCES [dbo].[RemitCategory] ([RemitCategoryId])
+ON DELETE CASCADE
+GO
+```
+
+##### Relational Operations
+[Relational Operations: Table to Table comparasion w/ same columns.](https://stackoverflow.com/questions/4602083/sql-compare-data-from-two-tables)
+>Using relational operators:
+```SQL
+SELECT * FROM TableA
+UNION 
+SELECT * FROM TableB
+EXCEPT 
+SELECT * FROM TableA
+INTERSECT
+SELECT * FROM TableB;
+```
+>Change EXCEPT to MINUS for Oracle.
+Slightly picky point: the above relies on operator precedence, which according to the SQL Standard is implementation dependent, so YMMV. It works for SQL Server, for which the precedence is:
+
+Expressions in parentheses
+INTERSECT
+EXCEPT and UNION evaluated from left to right.
 
 ##### --- **1/8/2018** ---
 > Dates are inefficient, going by topic now.
