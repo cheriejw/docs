@@ -1,3 +1,70 @@
+## Default Code
+```csharp
+//For DataTables
+using System;
+using System.Data;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+namespace Rextester
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            //Your code goes here
+            Console.WriteLine("Hello, world!");
+            
+            
+            DataTable table = new DataTable("Orders");
+      table.Columns.Add("OrderID", typeof(Int32));
+      table.Columns.Add("OrderQuantity", typeof(Int32));
+      table.Columns.Add("CompanyName", typeof(string));      
+      table.Columns.Add("Date", typeof(DateTime));
+
+      DataRow newRow = table.NewRow();
+      newRow["OrderID"] = 1;
+      newRow["OrderQuantity"] = 3;
+      newRow["CompanyName"] = "NewCompanyName";
+
+      // Add the row to the rows collection.
+      table.Rows.Add(newRow);
+
+      DataRow newRow2 = table.NewRow();
+      newRow2["OrderID"] = 2;
+      newRow2["OrderQuantity"] = 2;
+      newRow2["CompanyName"] = "NewCompanyName1";
+      table.Rows.Add(newRow2);
+
+      DataRow newRow3 = table.NewRow();
+      newRow3["OrderID"] = 3;
+      newRow3["OrderQuantity"] = 2;
+      newRow3["CompanyName"] = "NewCompanyName2";
+      table.Rows.Add(newRow3);
+
+      // Presuming the DataTable has a column named Date.
+      string expression = "OrderID = 2";
+      // string expression = "OrderQuantity = 2 and OrderID = 2";
+
+      // Sort descending by column named CompanyName.
+      string sortOrder = "CompanyName ASC";
+      DataRow[] foundRows;
+
+      // Use the Select method to find all rows matching the filter.
+      foundRows = table.Select(expression, sortOrder);
+
+            
+        foreach(DataColumn column in table.Select(expression, sortOrder).Columns)
+        {
+            Console.WriteLine(column.ColumnName);
+        }
+    }
+        }
+}
+```
+```
+
 ## **Any programming language of course serves two goals:**
 - Provide instructions to the computer.
 - Leave a record of the intentions of the programmer.
