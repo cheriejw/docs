@@ -1,5 +1,49 @@
 ## SQL
 ---
+#### [CTE](https://stackoverflow.com/questions/11169550/is-there-a-performance-difference-between-cte-sub-query-temporary-table-or-ta)
+```SQL
+;WITH cte AS (
+	SELECT DISTINCT
+		aep.AlertMethodId,
+		am.AlertMethodDescr
+	FROM
+		dbo.AlertEventPolicy aep WITH(NOLOCK) 
+		INNER JOIN AlertMethod am WITH(NOLOCK) ON am.AlertMethodId = aep.AlertMethodId
+	WHERE
+		aep.InstitutionId = @AcquirerId 
+		AND aep.AlertEventId IN (@MULTICHECKRECEIPT, @SINGLECHECKRECEIPT, @PURCHASERECEIPT)
+		AND aep.IsValid = 'Y'
+		AND am.IsValid = 'Y'
+)
+SELECT
+	rdpam.RemoteDepositPolicyAlertMethodId,
+	rdpam.RemoteDepositPolicyId,
+	rdp.RemoteDepositPolicyDescr,
+	cte.AlertMethodId,
+    cte.AlertMethodDescr,
+	rdpam.IsRegisteredAddressUsed,
+	rdpam.IsExtraAddressAllowed,
+	rdpam.IsValid,
+	rdpam.RowVer   
+FROM
+	RemoteDepositPolicyAlertMethod  rdpam WITH(NOLOCK)
+	INNER JOIN @RemoteDepositPolicy rdp ON rdp.RemoteDepositPolicyId = rdpam.RemoteDepositPolicyId
+	CROSS APPLY	cte
+WHERE
+	rdpam.IsValid = 'Y'
+```
+
+#### [AlterAuthorization (SID)](https://stackoverflow.com/questions/12389656/the-database-owner-sid-recorded-in-the-master-database-differs-from-the-database)
+Reset owner of DB.
+```SQL
+DECLARE @user VARCHAR(50)
+SELECT @user = quotename(SL.Name)
+FROM master..sysdatabases SD 
+    INNER JOIN master..syslogins SL ON SD.SID = SL.SID
+WHERE SD.Name = DB_NAME()
+EXEC('EXEC sp_changedbowner ' + @user)
+```
+
 #### [Using SET or using SELECT](https://www.mssqltips.com/sqlservertip/1888/when-to-use-set-vs-select-when-assigning-values-to-variables-in-sql-server/)
 ```sql
 SET @Var2ForSet = (SELECT [Name] FROM Production.Product WHERE Color = 'Silver')
