@@ -1,6 +1,22 @@
-### SQL:  [Base List](https://www.techonthenet.com/sql/index.php)
+### (T-)SQL:  [Base List](https://www.techonthenet.com/sql/index.php)
 ---
 #### Not included:
+- [DATE functions](https://www.tutorialspoint.com/t_sql/t_sql_date_functions.htm)
+- Set Statistics Time
+```sql
+SET STATISTICS TIME ON;
+GO
+declare @p9 varchar(1000)
+set @p9=''
+exec ECAdmin.ecsp_DoActionRemitCategory @LogInUserId=1834,@InstitutionId=8163,@FromIpAddress=N'::1',@FromDomain=N'::1',@RemitCategoryDescr=N'dup2',@RemitCategoryCd=N'dup2',@IsValid='Y',@Action='add',@ErrMsg=@p9 output
+select @p9
+GO
+SET STATISTICS TIME OFF;
+GO
+-- I have just been taking time before the Row Affected line:
+-- SQL Server Execution Times:
+-- CPU time = 16 ms,  elapsed time = 4 ms. 
+```
 - [Pivot](https://technet.microsoft.com/en-us/library/ms177410(v=sql.105).aspx) - PIVOT executes like UNION
 ```sql
 select * from RemitFormFieldAssoc rffa
@@ -84,3 +100,9 @@ WHERE
 _Arrange, Act, Assert_
 [Unit Test Naming Conventions](https://dzone.com/articles/7-popular-unit-test-naming)
 
+
+#### Unit Tests (tsqlt)
+_Arrange, Act, Assert_
+[Unit Test Naming Conventions](https://dzone.com/articles/7-popular-unit-test-naming)
+SQL Server Execution Times:
+   CPU time = 16 ms,  elapsed time = 4 ms. 
